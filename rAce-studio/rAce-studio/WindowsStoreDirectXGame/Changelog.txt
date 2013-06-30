@@ -1,0 +1,5 @@
+Changelog
+=========
+2013-04-06		Added BindableBase class for view models to derive from. Added BooleanNegationConverter class, BooleanToVisibilityConverter class, UICommand class, and MultipleConvertersConverter class for data binding.
+
+2013-03-13		Added changelog file. Turned BaseWin8Direct3DApp into a multi-project template. Removing all assets except volume_test.wav. Merged in 2D collision detection and the bloom component. Modified the bloom component so that it tracks its own enabled/disabled state rather than having that be a Game class variable. Modified DirectXBase to add a get accessor for the CommonStates instance that it creates and uses. Added a GettingStarted.htm file to explain how to prepare a newly created project for use.

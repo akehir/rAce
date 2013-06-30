@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>d779c1d0-c383-45b6-84e7-d4b02a65f82a</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>5587c444-8dfc-42ba-91fe-250d2e9b186b</UniqueIdentifier>
+    </Filter>
+    <Page Include="Common\StandardStyles.xaml">
+      <Filter>Common</Filter>
+    </Page>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\WideLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectXBase.cpp" />
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="DirectXPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="BasicLoader.cpp" />
+    <ClCompile Include="BasicReaderWriter.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="AudioEngine.cpp" />
+    <ClCompile Include="MediaStreamer.cpp" />
+    <ClCompile Include="SettingsFlyout.xaml.cpp" />
+    <ClCompile Include="Texture2D.cpp" />
+    <ClCompile Include="RenderTarget2D.cpp" />
+    <ClCompile Include="BloomComponent.cpp" />
+    <ClCompile Include="CollisionDetection2D.cpp" />
+	<ClCompile Include="BindableBase.cpp" />
+	<ClCompile Include="BooleanNegationConverter.cpp" />
+	<ClCompile Include="BooleanToVisibilityConverter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="DirectXPage.xaml.h" />
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="DirectXHelper.h" />
+    <ClInclude Include="DirectXBase.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="BasicLoader.h" />
+    <ClInclude Include="BasicReaderWriter.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="AudioEngine.h" />
+    <ClInclude Include="MediaStreamer.h" />
+    <ClInclude Include="SettingsFlyout.xaml.h" />
+    <ClInclude Include="Texture2D.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="RenderTarget2D.h" />
+    <ClInclude Include="IGameRenderComponent.h" />
+    <ClInclude Include="IGameResourcesComponent.h" />
+    <ClInclude Include="IGameUpdateComponent.h" />
+    <ClInclude Include="BloomCBuffers.h" />
+    <ClInclude Include="BloomComponent.h" />
+    <ClInclude Include="CollisionDetection2D.h" />
+	<ClInclude Include="BindableBase.h" />
+	<ClInclude Include="BooleanNegationConverter.h" />
+	<ClInclude Include="BooleanToVisibilityConverter.h" />
+	<ClInclude Include="UICommand.h" />
+    <ClInclude Include="MultipleConvertersConverter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GettingStarted.htm" />
+    <None Include="volume_test.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DirectXPage.xaml" />
+    <Page Include="SettingsFlyout.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\en-us\SettingsResources.resw" />
+    <PRIResource Include="Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Changelog.txt" />
+    <Text Include="README_LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="BloomBlurPixelShader.hlsl" />
+    <FxCompile Include="BloomCombinePixelShader.hlsl" />
+    <FxCompile Include="BloomExtractPixelShader.hlsl" />
+  </ItemGroup>
+</Project>

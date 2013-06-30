@@ -1,0 +1,266 @@
+<html>
+<head>
+    <meta name="GENERATOR" content="Microsoft Visual Studio">
+    <title>Getting started with the Windows Store DirectX Game Template</title>
+    <style type="text/css">
+        body
+        {
+            background: #000;
+            color: #fff;
+            width: 820px;
+            padding: 0px 10px;
+        }
+
+        a:link
+        {
+            color: #167fff;
+        }
+
+        a:hover
+        {
+            color: #59c2ff;
+        }
+
+        a:visited
+        {
+            color: #f468ff;
+        }
+
+        h1, h2, h3
+        {
+            background: #fff;
+            color: #000;
+            padding: 12px 20px;
+            text-align: justify;
+        }
+
+        h1
+        {
+            margin: 20px 0px;
+            font-size: x-large;
+        }
+
+        h2
+        {
+            margin: 40px 0px 20px 10px;
+            font-size: large;
+        }
+
+        h3
+        {
+            margin: 40px 0px 20px 20px;
+            font-size: medium;
+            font-variant: small-caps;
+        }
+
+        p
+        {
+            margin: 10px 30px;
+        }
+
+            p.boldtext
+            {
+                font-weight: bold;
+                font-size: large;
+                margin-top: 26px;
+            }
+
+        #headerimage
+        {
+            margin-left: 5px;
+            margin-right: auto;
+        }
+
+        #footer
+        {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Getting started with the Windows Store DirectX Game Template</h1>
+    <img id="headerimage" src="http://www.bobtacoindustries.com/Content/Images/gameworld.png" />
+    <h2>Set project dependencies.</h2>
+    <p>
+        From the PROJECT menu, select "Project Dependencies...". Under "Projects" select
+        "WindowsStoreDirectXGame" and then under "Depends on" put a check next to "DirectXTK_Windows8".
+        Press OK.
+    </p>
+
+    <h2>Specify app manifest values.</h2>
+    <p>
+        In Solution Explorer, double click on Package.appxmanifest (the "Manifest").
+        <br />
+        <br />
+        A brief note: You will see various values in the form of ms-resource:SomeResourceName.
+        These are setup to be localizable and are found in the Resources.resw file (which
+        we will attend to next). For now you should leave these values as you find them
+        so that the proper values will be drawn from the resources file thus making localization
+        and globalization much easier.
+    </p>
+    <h3>Select the "Application UI" tab in the Manifest.
+    </h3>
+    <p>
+        Set the "Supported rotations" for your game. If you support all rotations, do not
+        check any of the boxes. Usually a game will support either landscape or portrait,
+        not both. But it depends on the specifics of your game. Note that if you are going
+        to support both orientations, you should avoid using the fixed back buffer functionality
+        (or else should use it very carefully) since it is designed primarily for use with
+        either landscape or portrait, not both. It is not impossible to use it for both,
+        but
+        that usage is beyond the scope of this comment and should only be considered by
+        people with a really good understanding of how that code works.
+    </p>
+    <p>
+        Set the "Background color" for your game. This is the color that shows through any
+        transparent sections of your tile (logo) images and your splash screen. It is formatted
+        in #RRGGBB format. Note that while there are named color values available for use,
+        you
+        should not use any named color values since the SettingsFlyout parses this value
+        in order to comply with the settings ui guidance and the parsing code is only written
+        to handle colors in #RRGGBB format.
+    </p>
+    <p>
+        If you are going to use tile/toast notifications, make sure you select "Badge Logo"
+        under "Visual Assets" and configure the settings appropriately.
+    </p>
+    <h3>Next switch to the "Capabilities" tab in the Manifest.
+    </h3>
+    <p>
+        Make sure to enable any capabilities your game requires. If you are going to use
+        proximity for local multi-player, for instance, you need to set the "Proximity"
+        capability.
+    </p>
+    <h3>Next switch to the "Declarations" tab in the Manifest.
+    </h3>
+    <p>
+        Because this is a game, you should add the "Game Explorer" declaration. You will
+        need to create a Game Definitions File and set the appropriate ratings data as well
+        as any localized names for the game and all other applicable information. For more
+        information, see <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465153.aspx">
+            Creating a GDF file (Windows)
+        </a>, <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh452763.aspx">Obtaining
+            a game rating certificate (Windows)
+        </a>, <a href="http://blogs.msdn.com/b/windowsstore/archive/2013/01/11/getting-a-content-rating.aspx">
+            Getting a content rating</a>, and <a href="http://blogs.msdn.com/b/chuckw/archive/2012/05/31/windows-8-release-preview-and-gdfs.aspx">
+                Windows 8 and GDFs
+            </a>. Seriously, see all of those links; they each provide helpful and unique
+        information. If there was just one link with all of it I would've just posted it.
+        Instead there are four and you should visit them all. Or not. It's up to you.
+    </p>
+    <p>
+        You may wish to add other declarations in order to support various contracts and
+        extensions (note that the settings contract does not require a declaration). For
+        more about these, see: 
+        <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx">App contracts
+            and extensions (Windows Store apps)
+        </a>.
+    </p>
+    <h3>Lastly switch to the Packaging tab in the Manifest.
+    </h3>
+    <p>
+        Here you will want to set the "Package name". This is the string value that identifies
+        your game on the system (what you would see when running the Windows App Cert Kit
+        tool). It should be between 3 and 50 characters in length consisting of nothing
+        other than alpha-numeric characters, periods, and dashes (e.g. BTI.MyAwesomeGame).
+        There are also reserved names, which you can review here: <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211441.aspx">
+            Identity (Windows)
+        </a>. (Essentially the list consists of all the various port names, e.g. CON, PRN,
+        COM1, LPT9, AUX, etc.).
+    </p>
+    <p>
+        You will also want to set the "Publisher" value by pressing the "Choose Certificate..."
+        button. Choose an appropriate certificate. This is used during testing and is replaced
+        when you publish the app to the Windows Store.
+    </p>
+    <h2>Open Resources.resw so we can set more values.</h2>
+    <p>
+        RESW files contain string resources that can be easily localized into multiple languages
+        by translators (or, if the strings are simple enough, by a translation tool.) They
+        are your friend and thus this template makes use of them.
+    </p>
+    <p>
+        For an overview of string localization (both XAML- and code-based), see: <a href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965326.aspx">
+            Quickstart: Using string resources (Windows Store apps using C#/VB/C++ and XAML)
+            (Windows)
+        </a>and <a href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965323.aspx">
+            How to load string resources (Windows Store apps using C#/VB/C++ and XAML) (Windows)
+        </a>. For some helpful tools for localizing apps, see: <a href="http://msdn.microsoft.com/en-us/windows/apps/hh848309">
+            Multilingual App Toolkit for Visual Studio 2012
+        </a>.
+    </p>
+    <p>
+        In Resources.resw you will want to change the values of:
+    </p>
+    <ul>
+        <li>GameDisplayName;</li>
+        <li>GameDescription;</li>
+        <li>PublisherDisplayName; and</li>
+        <li>GameShortName.</li>
+    </ul>
+    <p>
+        Read the comment for each of the string resources to find out how they are used
+        and the acceptable lengths and contents for each. One important thing to note about
+        resources: if you provide a RESW for a particular locale but do not provide a value
+        for a specific string resource (e.g. PublisherDisplayName), then the value from
+        the default locale's resource file will be used. This all happens automagically
+        regardless of whether you are using XAML x:Uid attributes or you are using the <a
+            href="http://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.applicationmodel.resources.resourceloader.aspx">
+            ResourceLoader class
+        </a>. It's a good idea for consistency to either include all string resources
+        in every locale file (even where there is no translation) or else to only include
+        strings that will be localized in resource files other than the default locale's
+        RESW file. The former is generally preferred since you can then choose whether to
+        localize something on a per-language basis while still retaining the ability to
+        make sure that each RESW file has the same set of string resources as the others.
+    </p>
+    <h2>Open SettingsResources.resw to set one (important) value.</h2>
+    <p>
+        SettingsResources.resw contains the string resources for the settings flyout. One
+        of these values is the copyright string in the About settings pane. Right now it
+        reads "Copyright &copy; 2013 XXXXXXXX". Unless you had very strange parents or have
+        a very bizarre business name, you will want to change this value to reflect the
+        correct year and the correct name. If you are unsure what the correct name should
+        be, consult a knowledgeable attorney.
+    </p>
+    <h2>Get started with Game.h and Game.cpp</h2>
+    <p>
+        The main game is implemented in the Game class. This is where you will want to start
+        writing your game.
+    </p>
+    <p>
+        In addition to the <a href="http://www.bobtacoindustries.com/Developers/Samples">samples</a>
+        that are available, there are also a number of <a href="http://www.bobtacoindustries.com/Developers/WSDXGTemplateHowTo">
+            "how to"</a> guides for performing simple tasks. More samples and how tos will
+        be added as time permits.
+    </p>
+    <p>
+        Creating a game, from design to programming to asset creation and acquisition to
+        testing to polishing and lastly to publishing, is an art, and an arduous art at
+        that. Like any art, becoming good at it takes time and there will likely be some
+        parts that you decide to have a someone else do. One of the strengths of a really
+        good game developer is knowing which areas you should let someone else handle and
+        then finding good people to handle those areas. I wish you the best of luck in your
+        game creating endeavors!
+    </p>
+    <p id="footer">
+        -----------------------------------
+        <br />
+        <br />
+        Copyright &copy; 2013 Michael B. McLaughlin. All rights reserved.
+        <br />
+        <br />
+		Microsoft, Windows, DirectX, Visual C++, and Visual Studio are either registered
+		trademarks or trademarks of Microsoft Corporation in the United States and/or other
+		countries. Other trademarks, service marks, and intellectual property are the property
+		of their respective owners.
+		<br />
+		<br />
+		Microsoft Corporation does not sponsor or endorse the Windows Store DirectX Game
+		Template project and is neither involved in its development nor otherwise affiliated
+		with the project.
+    </p>
+    <p>&nbsp;</p>
+</body>
+</html>

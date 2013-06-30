@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="WindowsStoreDirectXGame" Publisher="CN=raphael" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>ms-resource:GameDisplayName</DisplayName>
+    <PublisherDisplayName>ms-resource:PublisherDisplayName</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="WindowsStoreDirectXGame.App">
+      <VisualElements DisplayName="ms-resource:GameDisplayName" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ms-resource:GameDescription" ForegroundText="light" BackgroundColor="#007F00">
+        <DefaultTile ShortName="ms-resource:GameShortName" WideLogo="Assets\WideLogo.png" ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
